@@ -14,7 +14,7 @@ const AddTaskForm = (props) => {
   const [enteredtasks,setTasks]=useState([])
   const [description,setDescription]=useState('')
   const userId=useSelector((state)=>state.Auth.UID)
-  console.log(userId)
+  
 
 
   const fetchtask= useCallback( async ()=>{
@@ -150,6 +150,22 @@ const AddTaskForm = (props) => {
     setEnteredTask(enteredtasks)
   }
 
+  const DeleteTaskHandler=async (id)=>{
+    try{
+        const response =await fetch(`https://to-do-list-3e614-default-rtdb.asia-southeast1.firebasedatabase.app/Tasks/${userId}/${id}.json`,{
+          method: 'DELETE'
+        })
+        if(response.ok){
+          alert('Deleted')
+        }else{
+          throw new Error('Something Went Wrong')
+        }
+      }catch(err){
+        alert(err.message)
+      }
+      setTasks((prevTasks)=>prevTasks.filter((t)=>t.id !== id))
+}
+
   
 
   return (
@@ -187,8 +203,10 @@ const AddTaskForm = (props) => {
             endDate={enttask.endDate}
             description={enttask.description}
             task={enttask.tasks}
-            completedTask={false}
+            completedTask={true}
+            AddedTask={true}
             onCompleted={CompleteHandler.bind(null, enttask.id,enttask.tasks,enttask.startDate,enttask.endDate,enttask.description)}
+            onDelete={DeleteTaskHandler.bind(null, enttask.id)}
           />
         ))}
       </ul>
