@@ -33,8 +33,8 @@ const TaskDetails=(props)=>{
                <Card className="task-card">
                    <Card.Body>{props.task}</Card.Body>
                 </Card>
-                {!props.completedTask && <button className="completed-button" onClick={Clickedhandler}>Completed</button>}
-                {props.completedTask && <button className="completed-button" onClick={DeleteHandler}>Delete Task</button>}
+                {props.completedTask && <button className="completed-button" onClick={Clickedhandler}>Completed</button>}
+                {props.AddedTask && <button className="completed-button" onClick={DeleteHandler}>Delete</button>}
             </Container>
         </li>
         {showModal && (
