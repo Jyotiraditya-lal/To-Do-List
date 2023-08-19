@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import "./Profile.css"; 
 import { useNavigate } from "react-router";
 import { AuthActions } from "../../Store/Auth-Redux";
+import ProfileBody from "./ProfileBody";
 
 const Profile = () => {
   const name = useSelector((state) => state.Auth.Name);
@@ -46,6 +47,7 @@ const Profile = () => {
   }
 
   return (
+  <React.Fragment>
     <Container>
       <Card className="profile-card">
         <Card.Body>
@@ -62,6 +64,8 @@ const Profile = () => {
         </Card.Body>
       </Card>
     </Container>
+    <ProfileBody />
+    </React.Fragment>
   );
 };
 
