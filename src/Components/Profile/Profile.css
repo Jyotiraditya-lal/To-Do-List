@@ -1,0 +1,58 @@
+.profile-card {
+    margin: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .profile-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 10px;
+    width: calc(70% - 10px); 
+  }
+  
+  .profile-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: aliceblue;
+  }
+  
+  .profile-email {
+    font-size: 18px;
+    color: aliceblue;
+  }
+
+  .delete-acc {
+    background-color: #ff0000; 
+    color: #fff; 
+    border: none; 
+    padding: 10px 20px; 
+    cursor: pointer; 
+    font-size: 14px; 
+    border-radius: 4px; 
+    margin-top: 10px; 
+  }
+  
+  .delete-acc:hover {
+    background-color: #cc0000; 
+  }
+  
+  .profile-img-col {
+    width: 30%; /* Adjust the width as needed */
+    text-align: right;
+  }
+  
+  .profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  
